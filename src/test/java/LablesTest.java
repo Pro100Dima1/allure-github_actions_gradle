@@ -15,6 +15,7 @@ public class LablesTest {
 
     }
 
+    @DisplayName("Проверка деплоя")
     @Test
     public void testDynamicLables(){
         Allure.getLifecycle().updateTestCase(
