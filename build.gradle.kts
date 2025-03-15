@@ -35,4 +35,6 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    val sysProps = System.getProperties().toMap() as Map<String, Any?>
+    systemProperties(sysProps)
 }
