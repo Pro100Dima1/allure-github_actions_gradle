@@ -56,12 +56,12 @@ test {
     systemProperties(System.getProperties().toString())
 }
 
-//tasks.test {
-//    useJUnitPlatform()
-//    val sysProps = System.getProperties().toMap() as Map<String, Any?>
-//    systemProperties(sysProps)
-//}
-//
+tasks.test {
+    useJUnitPlatform()
+    val sysProps = System.getProperties().toMap() as Map<String, Any?>
+    systemProperties(sysProps)
+}
+
 //task simple_test(type: Test){
 //    useJUnitPlatform{
 //        includeTags("simple")
