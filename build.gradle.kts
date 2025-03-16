@@ -1,3 +1,21 @@
+import org.gradle.internal.classpath.Instrumented.systemProperties
+import org.gradle.internal.impldep.org.apache.commons.lang3.function.Failable.test
+import org.gradle.internal.impldep.org.eclipse.jgit.lib.ObjectChecker.type
+import org.gradle.internal.impldep.org.junit.platform.launcher.TagFilter.includeTags
+import java.util.*
+
+fun test(function: () -> Properties) {
+
+}
+
+
+
+fun useJUnitPlatform() {
+    TODO("Not yet implemented")
+}
+
+
+
 plugins {
     id("java")
     id("io.qameta.allure") version "2.12.0"
@@ -33,8 +51,19 @@ dependencies {
 
 }
 
-tasks.test {
+test {
     useJUnitPlatform()
-    val sysProps = System.getProperties().toMap() as Map<String, Any?>
-    systemProperties(sysProps)
+    systemProperties(System.getProperties().toString())
 }
+
+//tasks.test {
+//    useJUnitPlatform()
+//    val sysProps = System.getProperties().toMap() as Map<String, Any?>
+//    systemProperties(sysProps)
+//}
+//
+//task simple_test(type: Test){
+//    useJUnitPlatform{
+//        includeTags("simple")
+//    }
+//}

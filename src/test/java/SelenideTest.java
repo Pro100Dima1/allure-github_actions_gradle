@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -10,6 +11,7 @@ import static org.openqa.selenium.By.linkText;
 
 public class SelenideTest {
 
+    @Tag("simple")
     @Test
     public void testIssueSearch(){
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -18,6 +20,6 @@ public class SelenideTest {
 
         $("#your-repos-filter").sendKeys("Python");
         $("#your-repos-filter").submit();
-        $(linkText("Python-projectsй")).should(Condition.exist);
+        $(linkText("Python-projects")).should(Condition.exist);
     }
 }
