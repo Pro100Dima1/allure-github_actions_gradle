@@ -23,3 +23,4 @@ public class SelenideTest {
         $(linkText("Python-projects")).should(Condition.exist);
     }
 }
+//
