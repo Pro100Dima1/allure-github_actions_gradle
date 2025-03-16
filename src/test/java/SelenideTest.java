@@ -9,9 +9,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 
+@Tag("simple")
 public class SelenideTest {
 
-    @Tag("simple")
     @Test
     public void testIssueSearch(){
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -23,4 +23,3 @@ public class SelenideTest {
         $(linkText("Python-projects")).should(Condition.exist);
     }
 }
-//
